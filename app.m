@@ -132,10 +132,13 @@
 %     end
 % end
 
+daqlist("ni")
 dq = daq("ni");
-dq.Rate = 0.2;
+dq.Rate = 1;
 addinput(dq, "Dev1", "ai0", "Voltage");
 
+start(dq,"Continuous");
+
 %function readData(app)
-data = read(dq, seconds(5));
+data = read(dq, 5)
 %end
